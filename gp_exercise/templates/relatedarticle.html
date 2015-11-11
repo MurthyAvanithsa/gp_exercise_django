@@ -1,0 +1,9 @@
+{% for article in related_articles %}
+		            <div class="col-sm-3 col-xs-6" id="related_article">
+		                <a href="#">
+		                    <img class="img-thumbnail portfolio-item" src="{{ article.hero_image.url }}" alt="">
+		                    <span><strong>{{ article.title }}</strong></span>
+		                </a>
+		            </div>
+
+{% endfor %}
