@@ -19,10 +19,13 @@ from django.contrib import admin
 from django.conf import settings
 from blog.views.articles_view import ArticlesView
 from blog.views.article_details_view import ArticleDetailsView
+from blog.views.search_view import SearchView
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT, 'show_indexes': False}),
     url(r'^homepage/$', ArticlesView.as_view(), name="article"),
 
     url(r'^article/(?P<article_id>[0-9]+)/$', ArticleDetailsView.as_view(), name="article-details"),
+    url(r'^search/', SearchView.as_view(), name="article-search"),
 ]
